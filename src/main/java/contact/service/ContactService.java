@@ -7,6 +7,6 @@ public interface ContactService {
 
     Result createContact(Contact contact);
     Result changeContact();
-    void searchContact();
+    Result searchContact();
     Result deleteContact();
 }

@@ -62,25 +62,25 @@ public class ServiceContactImplement implements ContactService{
     }
 
     @Override
-    public void searchContact() {
+    public Result searchContact() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Izlash: ");
         String text = scanner.nextLine();
         Result result = new Result();
         for (int i = 0; i < contactList.size(); i++) {
-            Iterator<Contact> iterator = contactList.iterator();
-            while (iterator.hasNext()) {
-                if (iterator.next().equals(text)) {
-                    System.out.println(iterator);
-                    result.setSuccess(true);
-                    result.setMessage("Muvoffaqiyatli");
-                }else{
-                    result.setMessage("Xato");
-                    result.setSuccess(false);
-                }
+            if(contactList.get(i).getName().equals(text) || contactList.get(i).getSurName().equals(text) || contactList.get(i).getCompany().equals(text) ||
+                    contactList.get(i).getPhoneNumber().equals(text) || contactList.get(i).getAddreess().equals(text) || contactList.get(i).getBirthday().equals(text) ||
+                    contactList.get(i).getEmail().equals(text)){
+                System.out.println(contactList.get(i));
+                result.setSuccess(true);
+                result.setMessage("Muvoffaqiyatli");
+            }else {
+                result.setMessage("Yo'q");
+                result.setSuccess(false);
+                System.out.println("Topilmadi");
             }
         }
-
+        return result;
     }
 
     @Override
