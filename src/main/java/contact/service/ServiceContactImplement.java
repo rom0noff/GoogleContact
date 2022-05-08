@@ -68,9 +68,9 @@ public class ServiceContactImplement implements ContactService{
         String text = scanner.nextLine();
         Result result = new Result();
         for (int i = 0; i < contactList.size(); i++) {
-            if(contactList.get(i).getName().equals(text) || contactList.get(i).getSurName().equals(text) || contactList.get(i).getCompany().equals(text) ||
-                    contactList.get(i).getPhoneNumber().equals(text) || contactList.get(i).getAddreess().equals(text) || contactList.get(i).getBirthday().equals(text) ||
-                    contactList.get(i).getEmail().equals(text)){
+            if(contactList.get(i).getName().toLowerCase().equals(text.toLowerCase()) || contactList.get(i).getSurName().toLowerCase().equals(text.toLowerCase()) || contactList.get(i).getCompany().toLowerCase().equals(text.toLowerCase()) ||
+                    contactList.get(i).getPhoneNumber().toLowerCase().equals(text.toLowerCase()) || contactList.get(i).getAddreess().toLowerCase().equals(text.toLowerCase()) || contactList.get(i).getBirthday().equals(text) ||
+                    contactList.get(i).getEmail().toLowerCase().equals(text.toLowerCase())){
                 System.out.println(contactList.get(i));
                 result.setSuccess(true);
                 result.setMessage("Muvoffaqiyatli");

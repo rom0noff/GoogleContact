@@ -1,6 +1,7 @@
 package contact;
 
 import contact.model.Contact;
+import contact.model.Result;
 import contact.model.subClasses.ContactMenu;
 import contact.model.subClasses.SelectedContact;
 import contact.service.ServiceContactImplement;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class ContactMain {
     public static void main(String[] args) {
         ServiceContactImplement serviceContact = new ServiceContactImplement();
+        Result result = new Result();
         Scanner scanner = new Scanner(System.in);
         while (true){
             ContactMenu.showMenu();
